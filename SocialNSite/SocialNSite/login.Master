@@ -1,0 +1,230 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="login.master.cs" Inherits="SocialNSite.login" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <link href="login.css" rel="stylesheet" type="text/css" />
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .style1 {
+            width: 1213px;
+            height: 54px;
+        }
+
+        .style4 {
+            width: 468px;
+        }
+
+        .style5 {
+            width: 405px;
+        }
+
+        .style7 {
+            width: 100%;
+        }
+
+        .style8 {
+            width: 222px;
+        }
+
+        .style9 {
+            width: 54px;
+        }
+
+        .style10 {
+            width: 35px;
+        }
+
+        .style11 {
+            width: 69px;
+        }
+
+        .style12 {
+            width: 47px;
+        }
+
+        .style13 {
+            width: 158px;
+        }
+
+        .style14 {
+            color: #00C462;
+            font-size: medium;
+        }
+
+        .style17 {
+            width: 28px;
+        }
+
+        .style18 {
+            width: 310px;
+        }
+
+        .style19 {
+            width: 270px;
+            text-align: right;
+            color: #FFFFFF;
+        }
+
+        .style20 {
+            width: 557px;
+        }
+
+        .style21 {
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <div id="header">
+
+            <table class="style1">
+                <tr>
+                    <td class="style19">&nbsp;</td>
+                    <td class="style18">
+                        <asp:Label ID="lblwelcome" runat="server" Text='<%#Eval("FName") %>' CssClass="lblhead"></asp:Label>
+                    </td>
+                    <td class="style17">
+                        <asp:Image ID="Image5" runat="server" Height="38px" ImageUrl="~/img/sech.png"
+                            Width="53px" />
+                    </td>
+                    <td class="style4">
+                        <asp:TextBox ID="txtsearch" runat="server" BorderWidth="0px" placeholder="search"
+                            CssClass="txtsearch" Width="211px"></asp:TextBox>
+                        <asp:Button ID="btnsearch" runat="server" Text="Search" CssClass="btnsearch"
+                            OnClick="btnsearch_Click" />
+                    </td>
+                    <td>
+                        <table class="style5">
+                            <tr>
+                                <td class="style20">&nbsp;</td>
+                                <td class="style10">
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/img/fd.png" />
+                                </td>
+                                <td class="style11">
+                                    <asp:LinkButton ID="lnkfreq" runat="server" CssClass="lblhead"
+                                        Font-Underline="False" PostBackUrl="~/FriendRqt.aspx">(0)</asp:LinkButton>
+                                </td>
+                                <td class="style12">
+                                    <asp:Image ID="Image6" runat="server" Height="26px" ImageUrl="~/img/mg.png"
+                                        Width="43px" />
+                                </td>
+                                <td class="style13">
+                                    <asp:LinkButton ID="lnkmessage" runat="server" CssClass="lblhead"
+                                        Font-Underline="False" OnClick="lnkmessage_Click">(0)</asp:LinkButton>
+                                </td>
+                                <td>
+                                    <asp:LinkButton ID="LinkButton1" runat="server" CssClass="lblhead"
+                                        Font-Underline="False" PostBackUrl="~/Default.aspx">LogOut</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="main">
+            <div id="left">
+                <table align="center" width="100%">
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Image ID="Image1" runat="server"
+                                Height="140px" Width="128px"
+                                CssClass="pimg" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Label ID="lblprofilenme" runat="server" Text='<%# Eval("FName") %>'></asp:Label>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-top-style: solid; border-top-width: thin; border-top-color: #C0C0C0; border-bottom-style: solid; border-bottom-width: thin; border-bottom-color: #C0C0C0;">
+                            <asp:FileUpload ID="FileUpload1" runat="server" Width="160px" />
+                            <asp:Button ID="btnulpoad" runat="server" CssClass="btnsearch" Text="Upload"
+                                OnClick="btnulpoad_Click" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:Menu ID="Menu2" runat="server" Width="100%" ForeColor="#000333">
+
+                                <Items>
+                                    <asp:MenuItem Text="Home" Value="Home" NavigateUrl="~/Main.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="Gallary" Value="Gallary" NavigateUrl="~/Album.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Friend" Value="My Friend" NavigateUrl="~/MyFriend.aspx"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Account" Value="My Account" NavigateUrl="~/Account.aspx"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/SMS.aspx" Text="Send SMS" Value="Send SMS"></asp:MenuItem>
+                                    <asp:MenuItem Text="My Message" Value="Message" NavigateUrl="~/MyMessage.aspx"></asp:MenuItem>
+                                    <asp:MenuItem NavigateUrl="~/Meme.aspx" Text="Meme Generator"
+                                        Value="Meme Generator"></asp:MenuItem>
+                                    <asp:MenuItem Text="Change Password" Value="Change Password" NavigateUrl="~/changepassword.aspx"></asp:MenuItem>
+                                </Items>
+                                <StaticMenuItemStyle CssClass="pmenu" Font-Underline="False" Width="240px" />
+                            </asp:Menu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border-top-style: solid; border-top-width: thin; border-top-color: #C0C0C0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+            <div id="center">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="right">
+                <table class="style7">
+                    <tr>
+                        <td style="text-align: center">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td class="style14"
+                            style="text-align: center; border-bottom-style: solid; border-bottom-width: thin; border-bottom-color: #00CC66;">People May You Know</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <asp:DataList ID="DlistUser" runat="server" Width="100%"
+                                OnItemCommand="DlistUser_ItemCommand">
+                                <ItemStyle CssClass="grid1" />
+                                <ItemTemplate>
+                                    <table class="style8">
+                                        <tr>
+                                            <td class="style9" rowspan="2">
+                                                <asp:Image ID="Image2" runat="server" ImageUrl='<%#Eval("profilepic") %>' Height="49px" Width="49px" />
+                                            </td>
+                                            <td>
+                                                <asp:Label ID="lblname" Text='<%# Eval("fname") %>' runat="server"
+                                                    Font-Bold="True" ForeColor="#9900CC"></asp:Label>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="text-align: right">
+                                                <asp:Button ID="btadfnd" runat="server" CommandArgument='<%#Eval("email") %>'
+                                                    Text="Add Friend" CssClass="btnsearch" Width="90px" />
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </ItemTemplate>
+                            </asp:DataList>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>&nbsp;</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+    </form>
+</body>
+</html>
